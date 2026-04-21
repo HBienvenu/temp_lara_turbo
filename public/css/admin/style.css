@@ -1,0 +1,97 @@
+/* Animation pour l'icône dark mode */
+.icon-transition {
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Animation pour la sidebar mobile */
+#sidebar {
+    transition: transform 0.3s ease-in-out;
+}
+
+#sidebar.mobile-hidden {
+    transform: translateX(-100%);
+}
+
+@media (min-width: 768px) {
+    #sidebar.mobile-hidden {
+        transform: translateX(0);
+    }
+
+    #sidebar {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+    }
+}
+
+/* Overlay pour mobile */
+#mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+}
+
+#mobile-overlay.active {
+    display: block;
+}
+
+
+/* Mode réduit */
+#sidebar.collapsed {
+    width: 5rem;
+    /* 20 tailwind */
+}
+
+#sidebar.collapsed .text-left,
+#sidebar.collapsed .font-semibold,
+#sidebar.collapsed span:not(:first-child) {
+    display: none;
+}
+
+#sidebar.collapsed nav a,
+#sidebar.collapsed nav button {
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+
+    /* Sidebar normale */
+    #sidebar {
+        width: 288px;
+        transition: width 0.4s ease !important;
+        overflow: hidden !important;
+    }
+
+    .content-wrapper {
+        flex: 1 !important;
+        min-width: 0 !important;
+        max-width: calc(100vw - 288px) !important;
+        overflow-x: auto !important;
+    }
+
+    #sidebar.collapsed+.content-wrapper {
+        max-width: calc(100vw - 80px) !important;
+    }
+}
+
+#parent_select_container,
+#new_parent_fields {
+    overflow: hidden; /* crucial pour que rien ne déborde */
+}
+
+
+/* Gestion sidebar sur gran ecran quand c'est beaucoup de lien */
+
+/* Masquer la scrollbar mais garder le scroll fonctionnel */
+.sidebar-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+.sidebar-scroll {
+    -ms-overflow-style: none;  /* IE & Edge */
+    scrollbar-width: none;       /* Firefox */
+}

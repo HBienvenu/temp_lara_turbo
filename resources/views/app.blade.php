@@ -8,22 +8,25 @@
     <title>{{ isset($title) ? SITE_NAME . ' - ' . $title : 'École ' . SITE_NAME }}</title>
     <link rel="icon" type="image/png" href="/images/logo/site_logo.png">
 
-    <script src="{{ asset('js/admin/dark.js') }}"></script>
+    {{-- Turbo Hotwire --}}
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@hotwired/turbo@latest/dist/turbo.es2017-esm.min.js"></script>
+
+    {{-- <script src="{{ asset('js/admin/dark.js') }}"></script> --}}
 
     {{-- Style DataTable --}}
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.4/css/dataTables.dataTables.min.css">
+    {{-- <link rel="stylesheet" href="https://cdn.datatables.net/2.3.4/css/dataTables.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.2/css/responsive.dataTables.css" />
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     {{-- Style --}}
-    <link rel="stylesheet" href="{{ asset('css/admin/style.css') }}?v=1">
+    {{-- <link rel="stylesheet" href="{{ asset('css/admin/style.css') }}?v=1">
     <link rel="stylesheet" href="{{ asset('css/admin/style.database.css') }}?v=1">
-    <link rel="stylesheet" href="{{ asset('css/admin/select2.css') }}?v=1">
+    <link rel="stylesheet" href="{{ asset('css/admin/select2.css') }}?v=1"> --}}
 
     <!-- Animation load moderne -->
-    <link rel="stylesheet" href="{{ asset('css/admin/load.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/admin/hotwire-transition.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/admin/load.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/hotwire-transition.css') }}"> --}}
 </head>
 
 <body
